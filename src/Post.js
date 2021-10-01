@@ -12,7 +12,7 @@ const Post = ({ name, desc, msg, imgUrl }) => {
   return (
     <div className="post">
       <div className="post__header">
-        <Avatar />
+        <Avatar src={imgUrl}>{name[0]}</Avatar>
         <div className="post__info">
           <h2>{name}</h2>
           <p>{desc}</p>

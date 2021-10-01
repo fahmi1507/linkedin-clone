@@ -8,9 +8,18 @@ import ChatIcon from "@mui/icons-material/Chat";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import HeaderOption from "./HeaderOption";
 import linkedinLogo from "./images/linkedin.svg";
-import avatar from "./images/avtr.svg";
+// import avatar from "./images/avtr.svg";
+import { useDispatch } from "react-redux";
+import { logout } from "./features/userSlice";
+import { auth } from "./firebase";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
   return (
     <div className="header">
       <div className="header__left">
@@ -19,7 +28,7 @@ const Header = () => {
         <div className="header__search">
           {/* search icon */}
           <SearchIcon />
-          <input type="text" />
+          <input type="text" placeholder="Search" />
         </div>
       </div>
 
@@ -29,7 +38,7 @@ const Header = () => {
         <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderOption title="Chat" Icon={ChatIcon} />
         <HeaderOption title="Notification" Icon={NotificationsIcon} />
-        <HeaderOption avatar={avatar} title="me" />
+        <HeaderOption onClick={logoutHandler} avatar={true} title="me" />
       </div>
     </div>
   );

@@ -9,10 +9,13 @@ import ArticleIcon from "@mui/icons-material/Article";
 import Post from "./Post";
 import { db } from "./firebase";
 import firebase from "firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
   const [input, setInput] = useState("");
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     db.collection("posts")
@@ -32,10 +35,10 @@ const Feed = () => {
   const sendPost = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      name: "Mike",
-      description: "this is description",
+      name: user.displayName,
+      description: user.email,
       message: input,
-      photoUrl: "",
+      photoUrl: user.photoUrl || "",
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 

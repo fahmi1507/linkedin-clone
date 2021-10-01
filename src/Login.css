@@ -1,0 +1,38 @@
+.login {
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+
+.logo__login {
+  height: 70px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+.login > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__input {
+  /* width: 350px; */
+  height: 50px;
+  font-size: 20px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.login__input.login__button {
+  background-color: #2967b2;
+  color: white;
+}
+
+.login__register {
+  color: #5981b1;
+  cursor: pointer;
+}
+.login > p {
+  margin-top: 10px;
+}
