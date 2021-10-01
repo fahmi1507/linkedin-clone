@@ -6,6 +6,10 @@
   margin-top: 8px;
 }
 
+.inputOption > h4 {
+  color: #666;
+}
+
 .inputOption:hover {
   background-color: whitesmoke;
   border-radius: 10px;
