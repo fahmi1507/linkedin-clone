@@ -1,7 +1,7 @@
-import { Avatar } from "@material-ui/core";
 import React from "react";
 import "./Sidebar.css";
 import bg from "./images/bg.svg";
+import { Avatar } from "@mui/material";
 const Sidebar = () => {
   const recentItem = (topic) => (
     <div className="sidebar__recentItem">

@@ -1,13 +1,13 @@
 import React from "react";
 import "./Header.css";
-import SearchIcon from "@material-ui/icons/Search";
-import linkedinLogo from "./images/linkedin.svg";
+import SearchIcon from "@mui/icons-material/Search";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import HomeIcon from "@mui/icons-material/Home";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import ChatIcon from "@mui/icons-material/Chat";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import HeaderOption from "./HeaderOption";
-import HomeIcon from "@material-ui/icons/Home";
-import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
-import ChatIcon from "@material-ui/icons/Chat";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
+import linkedinLogo from "./images/linkedin.svg";
 import avatar from "./images/avtr.svg";
 
 const Header = () => {

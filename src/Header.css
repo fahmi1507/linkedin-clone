@@ -6,6 +6,8 @@
   top: 0;
   padding: 8px;
   width: 100%;
+  z-index: 2;
+  background-color: white;
 }
 
 .header__left {
