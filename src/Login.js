@@ -10,7 +10,7 @@ const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [photoUrl, setPhotoUrl] = useState("");
+  const [profilePic, setProfilePic] = useState("");
 
   const registerHandler = () => {
     if (!name) {
@@ -23,7 +23,7 @@ const Login = () => {
         userAuth.user
           .updateProfile({
             displayName: name,
-            photoUrl: photoUrl,
+            photoURL: profilePic,
           })
           .then(
             dispatch(
@@ -31,7 +31,7 @@ const Login = () => {
                 displayName: name,
                 email: userAuth.user.email,
                 uid: userAuth.user.uid,
-                photoUrl: photoUrl,
+                photoUrl: profilePic,
               })
             )
           )
@@ -61,7 +61,7 @@ const Login = () => {
 
         <input onChange={(e) => setEmail(e.target.value)} value={email} className="login__input" type="text" placeholder="Email address" />
 
-        <input onChange={(e) => setPhotoUrl(e.target.value)} value={photoUrl} className="login__input" type="text" placeholder="Profile Pic (optional)" />
+        <input onChange={(e) => setProfilePic(e.target.value)} value={profilePic} className="login__input" type="text" placeholder="Profile Pic (optional)" />
 
         <input onChange={(e) => setPass(e.target.value)} value={pass} className="login__input" type="password" placeholder="Password" />
 

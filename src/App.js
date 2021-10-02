@@ -6,8 +6,8 @@ import Feed from "./Feed";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
 import Login from "./Login";
-import { auth } from "./firebase";
 import Widgets from "./Widgets";
+import { auth } from "./firebase";
 
 function App() {
   const user = useSelector(selectUser);
@@ -16,14 +16,16 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
-        dispatch(
-          login({
-            displayName: userAuth.displayName,
-            email: userAuth.email,
-            uid: userAuth.uid,
-            photoUrl: userAuth.photoURL,
-          })
-        );
+        if (userAuth.displayName) {
+          dispatch(
+            login({
+              displayName: userAuth.displayName,
+              email: userAuth.email,
+              uid: userAuth.uid,
+              photoUrl: userAuth.photoURL,
+            })
+          );
+        }
       } else {
         dispatch(logout());
       }
